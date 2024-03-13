@@ -1,0 +1,72 @@
+.modal {
+	width: 100vw;
+	height: 100vh;
+	z-index: 999;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	visibility: hidden;
+	opacity: 0;
+	overflow: hidden;
+	transform: scale(0);
+	background-color: #000000;
+	transition: opacity 0.4s ease, visibility 0.4s ease,
+		transform 0.5s ease-in-out;
+}
+
+.modal.open {
+	visibility: visible;
+	opacity: 1;
+	transform: scale(1);
+}
+
+.modal.open svg {
+	position: fixed;
+	top: 0.5em;
+	right: 0.5em;
+	color: #ffffff;
+	font-size: 3em;
+	cursor: pointer;
+}
+
+.modal__image {
+	width: auto;
+	max-width: 100%;
+	height: auto;
+	max-height: 100%;
+	display: block;
+	line-height: 0;
+	padding: 2em 0 2em;
+	margin: 0 auto;
+}
+
+.gallery {
+	column-count: 3;
+	column-width: 33%;
+	padding: 0 1em;
+}
+
+.gallery__image-list {
+	cursor: pointer;
+	transition: all 350s ease;
+	margin-bottom: 1em;
+}
+
+.gallery__image-item {
+	width: 100%;
+}
+
+@media (max-width: 900px) {
+	.gallery {
+		column-count: 2;
+	}
+}
+
+@media (max-width: 480px) {
+	.gallery {
+		column-count: 1;
+	}
+}
